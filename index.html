@@ -1,306 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invitación de Casamiento</title>
-  <!-- Fuente elegante (opcional) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --beige: #f5efe6;
-      --blanco: #ffffff;
-      --negro: #111111;
-      --tinta-suave: #333333;
-      --borde: rgba(0,0,0,0.08);
-    }
-    *{ box-sizing: border-box; }
-    html, body{
-      margin: 0;
-      padding: 0;
-      background: var(--beige);
-      color: var(--tinta-suave);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    }
-    .wrap{
-      min-height: 100dvh;
-      display: grid;
-      place-items: center;
-      padding: 32px 16px;
-    }
-    .card{
-      width: 100%;
-      max-width: 760px;
-      background: var(--blanco);
-      border: 1px solid var(--borde);
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-      overflow: hidden;
-    }
-    .hero{
-      background: linear-gradient(180deg, var(--beige), #fff);
-      padding: 48px 40px 24px;
-      text-align: center;
-      border-bottom: 1px solid var(--borde);
-    }
-    .tag{
-      display: inline-block;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: var(--negro);
-      background: #f0eadf;
-      border: 1px solid var(--borde);
-      padding: 6px 10px;
-      border-radius: 999px;
-      margin-bottom: 16px;
-    }
-    h1{
-      font-family: "Playfair Display", Georgia, serif;
-      color: var(--negro);
-      font-weight: 700;
-      font-size: clamp(28px, 6vw, 56px);
-      line-height: 1.1;
-      margin: 0 0 10px;
-    }
-    .ampersand{
-      font-family: "Playfair Display", Georgia, serif;
-      color: var(--negro);
-      opacity: .85;
-      margin: 0 10px;
-    }
-    .subtitle{
-      font-size: 16px;
-      color: #444;
-      margin-top: 8px;
-    }
-    .details{
-      padding: 28px 28px 8px;
-      display: grid;
-      gap: 22px;
-    }
-    .detail-row{
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 18px;
-      align-items: start;
-    }
-    .label{
-      font-weight: 600;
-      color: var(--negro);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-size: 12px;
-    }
-    .value{
-      font-size: 16px;
-    }
-    .divider{
-      height: 1px;
-      background: var(--borde);
-      margin: 8px 0;
-    }
-    .countdown{
-      background: #fbf8f3;
-      border-top: 1px solid var(--borde);
-      border-bottom: 1px solid var(--borde);
-      padding: 18px 24px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-    }
-    .timer{
-      font-variant-numeric: tabular-nums;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: clamp(20px, 4vw, 28px);
-      color: var(--negro);
-      letter-spacing: .06em;
-    }
-    .actions{
-      padding: 24px 28px 36px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-    }
-    .btn{
-      appearance: none;
-      border: 1px solid var(--negro);
-      background: var(--negro);
-      color: var(--blanco);
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform .08s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-      box-shadow: 0 8px 18px rgba(0,0,0,.08);
-    }
-    .btn.outline{
-      background: var(--blanco);
-      color: var(--negro);
-    }
-    .btn:hover{ transform: translateY(-2px); }
-    .note{
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-      padding: 0 24px 28px;
-    }
-    footer{
-      text-align: center;
-      font-size: 12px;
-      color: #888;
-      padding: 16px 8px 8px;
-    }
-    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-    @media (max-width: 560px){
-      .detail-row{ grid-template-columns: 1fr; }
-      .label{ order: -1; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Nos Casamos!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap">
 </head>
 <body>
-  <div class="wrap">
-    <article class="card" role="article" aria-labelledby="title">
-      <section class="hero">
-        <div class="tag" aria-hidden="true">Casamiento</div>
-        <h1 id="title">
-          <!-- EDITA AQUÍ: nombres -->
-          <span class="names">Sofía</span>
-          <span class="ampersand">&amp;</span>
-          <span class="names">Martín</span>
-        </h1>
-        <p class="subtitle">Nos encantaría compartir este día con vos.</p>
-      </section>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <header>
+            <h1 class="bride-groom">¡Sofía & Martín!</h1>
+            <p class="invitation-text">Con alegría los invitamos a celebrar nuestro matrimonio.</p>
+        </header>
 
-      <section class="details" aria-describedby="detalle">
-        <div id="detalle" class="sr-only" hidden>Detalles del evento</div>
+        <section class="details">
+            <p class="date-time">Sábado, 1 de Marzo de 2026 - 18:00</p>
+            <p class="location">Salón de Eventos "[Nombre del Salón]"</p>
+            <p class="address">[Dirección Completa]</p>
+        </section>
 
-        <div class="detail-row">
-          <div class="label">Fecha</div>
-          <div class="value">
-            <!-- EDITA AQUÍ: fecha legible -->
-            Sábado 18 de octubre de 2025 · 17:00
-          </div>
-        </div>
+        <section class="countdown">
+            <h2>¡Faltan!</h2>
+            <div id="countdown">
+                <div class="time">
+                    <span id="days"></span>
+                    <p>Días</p>
+                </div>
+                <div class="time">
+                    <span id="hours"></span>
+                    <p>Horas</p>
+                </div>
+                <div class="time">
+                    <span id="minutes"></span>
+                    <p>Minutos</p>
+                </div>
+                <div class="time">
+                    <span id="seconds"></span>
+                    <p>Segundos</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="detail-row">
-          <div class="label">Lugar</div>
-          <div class="value">
-            <!-- EDITA AQUÍ: lugar -->
-            Estancia La Magnolia<br/>
-            Camino de las Acacias s/n, Buenos Aires
-          </div>
-        </div>
+        <section class="buttons">
+            <a href="#" class="button confirm-button">Confirmar Asistencia</a>
+            <a href="https://www.google.com/maps/place/Tu+Direcci%C3%B3n" class="button location-button" target="_blank">Ver Ubicación</a>
+        </section>
 
-        <div class="detail-row">
-          <div class="label">Dress code</div>
-          <div class="value">Elegante (paleta beige, blanco y negro)</div>
-        </div>
+        <footer>
+            <p class="footer-text">¡Los esperamos con amor!</p>
+        </footer>
+    </div>
 
-        <div class="divider" role="separator" aria-hidden="true"></div>
-
-        <div class="detail-row">
-          <div class="label">Mesa de regalos</div>
-          <div class="value">
-            <!-- EDITA AQUÍ: link o texto -->
-            Alias: <span class="mono">SOFIMAR.BODA</span> · Banco Río<br/>
-            Lista Falabella #49231
-          </div>
-        </div>
-      </section>
-
-      <section class="countdown" aria-live="polite">
-        <div class="label" style="margin-bottom:6px;">Falta para el gran día</div>
-        <div class="timer" id="timer">—</div>
-      </section>
-
-      <section class="actions">
-        <!-- EDITA AQUÍ: enlace de RSVP/Google Form -->
-        <a class="btn" href="https://forms.gle/" target="_blank" rel="noopener">Confirmar asistencia</a>
-        <button class="btn outline" id="addCalendarBtn" type="button">Agregar al calendario (.ics)</button>
-      </section>
-
-      <p class="note">
-        Si tenés alguna restricción alimentaria, por favor contanos al confirmar tu asistencia.
-      </p>
-
-      <footer>Con amor, Sofi &amp; Martín · 2025</footer>
-    </article>
-  </div>
-
-  <script>
-    // ------- EDITA AQUÍ: fecha/hora exacta del evento (año, mes-1, día, hora, min) -------
-    const eventDate = new Date(2025, 9, 18, 17, 0, 0); // 18 Oct 2025 17:00 (mes 9 = octubre)
-    // --------------------------------------------------------------------------------------
-
-    // Countdown simple
-    const $timer = document.getElementById('timer');
-    function pad(n){ return String(n).padStart(2,'0'); }
-    function tick(){
-      const now = new Date();
-      const diff = eventDate - now;
-      if (diff <= 0){
-        $timer.textContent = "¡Hoy es el día!";
-        return;
-      }
-      const sec = Math.floor(diff/1000);
-      const d = Math.floor(sec / 86400);
-      const h = Math.floor((sec % 86400) / 3600);
-      const m = Math.floor((sec % 3600) / 60);
-      const s = sec % 60;
-      $timer.textContent = `${d} días · ${pad(h)}:${pad(m)}:${pad(s)}`;
-      requestAnimationFrame(()=>setTimeout(tick, 250));
-    }
-    tick();
-
-    // Generar .ics (calendario) al vuelo
-    document.getElementById('addCalendarBtn').addEventListener('click', () => {
-      const title = 'Casamiento: Sofía & Martín'; // EDITA: título
-      const description = '¡Te esperamos para celebrar con nosotros!'; // EDITA: descripción
-      const location = 'Estancia La Magnolia, Buenos Aires'; // EDITA: ubicación
-
-      // Formato ICS (UTC). Duración: 6 horas.
-      const dtStart = new Date(eventDate);
-      const dtEnd = new Date(eventDate.getTime() + 6*60*60*1000);
-
-      function toICSDate(d){
-        const y = d.getUTCFullYear();
-        const m = String(d.getUTCMonth()+1).padStart(2,'0');
-        const da = String(d.getUTCDate()).padStart(2,'0');
-        const h = String(d.getUTCHours()).padStart(2,'0');
-        const mi = String(d.getUTCMinutes()).padStart(2,'0');
-        const s = String(d.getUTCSeconds()).padStart(2,'0');
-        return `${y}${m}${da}T${h}${mi}${s}Z`;
-      }
-
-      const ics = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//Invitacion Boda//ES',
-        'CALSCALE:GREGORIAN',
-        'METHOD:PUBLISH',
-        'BEGIN:VEVENT',
-        `DTSTART:${toICSDate(dtStart)}`,
-        `DTEND:${toICSDate(dtEnd)}`,
-        `SUMMARY:${title}`,
-        `DESCRIPTION:${description}`,
-        `LOCATION:${location}`,
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ].join('\r\n');
-
-      const blob = new Blob([ics], {type: 'text/calendar'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'casamiento.ics';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
